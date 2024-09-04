@@ -20,6 +20,16 @@ Than configure `.env` file:
     API_HASH="Your-API-hash"
     ME="@your-telegram-tag"
 
+## Testing
+
+Run this app, open any dialog in Telegram and send
+
+```msg
+Быть волком - значит жить на свободе
+```
+
+**You shall see the most patriotic change imaginable**
+
 ## License
 
 ZVeZda Userbot is a free, open-source software distributed under the [MIT License](LICENSE.txt)
