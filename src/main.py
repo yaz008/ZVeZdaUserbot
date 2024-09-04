@@ -3,11 +3,11 @@ from app import app
 from pyrogram.client import Client
 from pyrogram.filters import user
 from pyrogram.types import Message
+from re import sub
 
 def edit_message(text: str) -> str:
-    table: dict[str, str] = { 'з': 'Z', 'в': 'V', 'З': 'Z', 'В': 'V',
-                             'сво': 'СВО', 'свО': 'СВО', 'сВо': 'СВО', 'сВО': 'СВО',
-                             'Сво': 'СВО', 'СвО': 'СВО', 'СВо': 'СВО'}
+    table: dict[str, str] = { 'з': 'Z', 'в': 'V', 'З': 'Z', 'В': 'V' }
+    text = sub(pattern=r'[сС][вВ][оО]', repl='СВО', string=text)
     return text.translate(text.maketrans(table))
 
 @app.on_message(filters=user(getenv(key='ME')))
