@@ -7,8 +7,8 @@ from re import sub
 
 def edit_message(text: str) -> str:
     table: dict[str, str] = { 'з': 'Z', 'в': 'V', 'З': 'Z', 'В': 'V' }
-    text = sub(pattern=r'[сС][вВ][оО]', repl='СВО', string=text)
-    return text.translate(text.maketrans(table))
+    text = text.translate(text.maketrans(table))
+    return sub(pattern=r'[сС]V[оО]', repl='СВО', string=text)
 
 @app.on_message(filters=user(getenv(key='ME')))
 def on_message(_: Client, message: Message) -> None:
