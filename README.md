@@ -14,6 +14,12 @@ Than create a Python 3.12 virtual environment and run
 pip install -r requirements.txt
 ```
 
+Than configure `.env` file:
+
+    API_KEY="Your-API-ID"
+    API_HASH="Your-API-hash"
+    ME="@your-telegram-tag"
+
 ## License
 
 ZVeZda Userbot is a free, open-source software distributed under the [MIT License](LICENSE.txt)
